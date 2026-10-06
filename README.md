@@ -1,16 +1,10 @@
-# GRESP 2026 - publicação de resultados
+# Site de Apuração GRESP 2026-2027
 
-Arquivos:
-- `index.html`: página pública, somente leitura.
-- `admin.html`: editor local para preparar os resultados.
-- `resultados.json`: arquivo que alimenta a página pública.
+Envie **todos os arquivos** para a raiz do repositório `gresp-2026`.
 
-## Atualização
-1. Abra `https://SEU-USUARIO.github.io/gresp-2026/admin.html`.
-2. Preencha e confira os resultados.
-3. Marque "Publicar resultado para o público".
-4. Clique em "Baixar resultados.json".
-5. No GitHub, substitua o arquivo `resultados.json` da raiz pelo arquivo baixado.
-6. Aguarde a publicação do GitHub Pages e atualize a página pública.
+- Público: https://joelciojunior-maker.github.io/gresp-2026/
+- Administração: https://joelciojunior-maker.github.io/gresp-2026/admin.html
 
-A página `admin.html` não grava no GitHub automaticamente e não contém senha. Ela apenas gera o arquivo JSON. A publicação oficial só ocorre quando alguém com acesso ao repositório substitui `resultados.json`.
+A Chapa nº 90 - Jovens Gremistas permanece visível como **INAPTA - DECISÃO DEFINITIVA**, mas não recebe votos e não participa da totalização, percentuais ou classificação.
+
+Para publicar pelo painel administrativo, use um token Fine-grained limitado ao repositório, com `Contents: Read and write`. Nunca coloque o token no código.
