@@ -1,0 +1,41 @@
+{
+  "publicado": false,
+  "atualizadoEm": "",
+  "observacao": "Resultado ainda não publicado pela Comissão Eleitoral.",
+  "urna1": {
+    "aptos": 359,
+    "comparecimento": 0,
+    "brancos": 0,
+    "nulos": 0,
+    "abertura": "",
+    "encerramento": "",
+    "votos": {
+      "10": 0,
+      "17": 0,
+      "55": 0,
+      "67": 0,
+      "77": 0,
+      "95": 0,
+      "97": 0,
+      "99": 0
+    }
+  },
+  "urna2": {
+    "aptos": 387,
+    "comparecimento": 0,
+    "brancos": 0,
+    "nulos": 0,
+    "abertura": "",
+    "encerramento": "",
+    "votos": {
+      "10": 0,
+      "17": 0,
+      "55": 0,
+      "67": 0,
+      "77": 0,
+      "95": 0,
+      "97": 0,
+      "99": 0
+    }
+  }
+}
