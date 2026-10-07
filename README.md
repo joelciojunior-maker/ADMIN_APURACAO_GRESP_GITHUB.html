@@ -40,7 +40,7 @@ footer{text-align:center;color:#637382;padding:25px}.print-only{display:none}
 <div class="print-only"><p><b>Conferido por:</b> __________________________________________ &nbsp; <b>Data:</b> ____/____/2026</p></div>
 </div>
 </div>
-<footer>Edital nº 102/2026 | Planilha oficial: PLANILHA_DE_APURACAO_GRESP_2026_9_CHAPAS_CORRIGIDA.xlsx</footer>
+<footer>Edital nº 001/2026 | Planilha oficial: PLANILHA_DE_APURACAO_GRESP_2026_9_CHAPAS_CORRIGIDA.xlsx</footer>
 <script>
 const chapas=[['10','FIFA STREET'],['17','CONSCIENTIZAÇÃO DA ESCOLA'],['55','ESPORTES FC'],['67','CHAPA DA TODDY'],['77','VOZES DO ABÍLIO'],['90','JOVENS GREMISTAS'],['95','RELÂMPAGO ABÍLIO'],['97','UNIDOS PELO FUTURO'],['99','ABÍLIO TRANSFORMA']];
 const urnas=[{id:1,nome:'Urna 1 - 1ª Seção',aptos:359,cor:'#2878d0'},{id:2,nome:'Urna 2 - 2ª Seção',aptos:387,cor:'#7048a8'}];
