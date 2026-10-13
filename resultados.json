@@ -1,41 +1,41 @@
 {
   "publicado": false,
-  "atualizadoEm": "",
+  "atualizadoEm": "13/10/2026, 08:27:14",
   "observacao": "Resultado ainda não publicado pela Comissão Eleitoral.",
   "urna1": {
     "aptos": 359,
-    "comparecimento": 0,
-    "brancos": 0,
-    "nulos": 0,
-    "abertura": "",
-    "encerramento": "",
+    "comparecimento": 296,
+    "brancos": 5,
+    "nulos": 16,
+    "abertura": "09:22",
+    "encerramento": "18:15",
     "votos": {
-      "10": 0,
-      "17": 0,
-      "55": 0,
-      "67": 0,
-      "77": 0,
-      "95": 0,
-      "97": 0,
-      "99": 0
+      "10": 4,
+      "17": 7,
+      "55": 30,
+      "67": 70,
+      "77": 47,
+      "95": 5,
+      "97": 36,
+      "99": 76
     }
   },
   "urna2": {
     "aptos": 387,
-    "comparecimento": 0,
-    "brancos": 0,
-    "nulos": 0,
-    "abertura": "",
-    "encerramento": "",
+    "comparecimento": 291,
+    "brancos": 3,
+    "nulos": 11,
+    "abertura": "09:17",
+    "encerramento": "18:35",
     "votos": {
-      "10": 0,
-      "17": 0,
-      "55": 0,
-      "67": 0,
-      "77": 0,
-      "95": 0,
-      "97": 0,
-      "99": 0
+      "10": 24,
+      "17": 3,
+      "55": 22,
+      "67": 34,
+      "77": 51,
+      "95": 6,
+      "97": 30,
+      "99": 107
     }
   }
 }
