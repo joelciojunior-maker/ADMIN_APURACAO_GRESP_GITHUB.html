@@ -112,6 +112,107 @@ Após cada atualização da apuração:
 4. Aguarde a atualização do GitHub Pages.
 5. Atualize a página pública com `Ctrl + F5` para evitar a exibição de uma versão armazenada em cache.
 
+## Atualização automática da página pública
+
+Para que a página pública mostre o conteúdo mais recente do `resultados.json` sem depender dos dados salvos no navegador, o arquivo `resultado_publico.html` deve carregar o JSON publicado por meio de `fetch()`.
+
+### 1. Carregamento automático do JSON
+
+No arquivo JavaScript usado pela página pública, utilize uma função semelhante a esta:
+
+```javascript
+async function carregarResultadosPublicados() {
+  try {
+    const resposta = await fetch(`resultados.json?atualizacao=${Date.now()}`, {
+      cache: 'no-store'
+    });
+
+    if (!resposta.ok) {
+      throw new Error(`Não foi possível carregar o JSON: ${resposta.status}`);
+    }
+
+    dados = await resposta.json();
+    render();
+  } catch (erro) {
+    console.error(erro);
+    document.getElementById('resultado2').textContent =
+      'Não foi possível consultar a atualização mais recente.';
+  }
+}
+
+window.addEventListener('DOMContentLoaded', carregarResultadosPublicados);
+```
+
+O parâmetro `?atualizacao=${Date.now()}` e a opção `cache: 'no-store'` ajudam a impedir que o navegador exiba uma versão antiga do JSON armazenada em cache.
+
+> Essa função deve ser usada na página pública. A área administrativa pode continuar usando o armazenamento local para não perder os lançamentos durante a digitação.
+
+### 2. Consulta periódica sem recarregar a página
+
+Se a página pública precisar conferir automaticamente se existem novos dados, acrescente:
+
+```javascript
+setInterval(carregarResultadosPublicados, 30000);
+```
+
+Nesse exemplo, a página consulta o `resultados.json` a cada **30 segundos**. Para evitar excesso de consultas, não é recomendável usar intervalos muito curtos.
+
+### 3. Atualização automática após substituir o JSON
+
+O fluxo recomendado é:
+
+1. Preencher ou corrigir a apuração em `admin_apuracao.html`.
+2. Clicar em **Salvar 2º turno**.
+3. Clicar em **Baixar resultados.json**.
+4. Substituir o `resultados.json` existente no repositório do GitHub.
+5. Confirmar a alteração em **Commit changes**.
+6. Aguardar o GitHub Pages concluir a publicação.
+7. A página pública fará uma nova consulta ao JSON no intervalo configurado.
+
+A atualização automática da página pública não envia o arquivo para o GitHub. A substituição e o commit do `resultados.json` ainda precisam ser realizados pelo responsável, a menos que seja implementada uma integração autenticada no servidor.
+
+### 4. Atualização automática do GitHub Pages
+
+Quando o GitHub Pages estiver configurado para publicar a partir da branch usada pelo repositório, cada commit do `resultados.json` iniciará uma nova publicação do site. Não é necessário reenviar os demais arquivos quando somente os resultados forem alterados.
+
+Para conferir a configuração:
+
+1. Abra o repositório no GitHub.
+2. Acesse **Settings**.
+3. Selecione **Pages**.
+4. Em **Build and deployment**, escolha **Deploy from a branch**.
+5. Selecione a branch utilizada, normalmente `main`, e a pasta `/ (root)`.
+6. Salve a configuração.
+
+### 5. Botão de atualização manual
+
+Além da consulta periódica, a página pública pode disponibilizar um botão para atualização imediata:
+
+```html
+<button type="button" onclick="carregarResultadosPublicados()">
+  Atualizar resultados
+</button>
+```
+
+Esse botão consulta novamente o `resultados.json` sem exigir que o visitante feche a página.
+
+### 6. Verificação da atualização
+
+Depois de publicar um novo JSON:
+
+1. Abra a página pública em uma janela anônima ou em outro dispositivo.
+2. Aguarde o intervalo de atualização configurado.
+3. Confira a data, os totais por urna, os votos válidos, os votos em branco, os votos nulos e a classificação.
+4. Se a versão anterior continuar aparecendo, use `Ctrl + F5` e verifique se o commit do GitHub Pages foi concluído.
+
+### 7. Cuidados de segurança
+
+- Nunca coloque token pessoal do GitHub em `resultado_publico.html`, `aplicacao.js` ou `resultados.json`.
+- Código executado no navegador fica visível aos visitantes e não pode guardar credenciais com segurança.
+- A página pública deve apenas ler o JSON.
+- A gravação automática diretamente no GitHub exige uma solução protegida no lado do servidor ou um processo administrativo separado.
+- Mantenha uma cópia de segurança do JSON anterior antes de cada publicação.
+
 ## Atenção sobre a atualização pública
 
 Na versão atual do pacote, a área administrativa salva os votos no navegador e permite exportar o JSON. Entretanto, a página pública pode priorizar dados armazenados localmente no navegador em vez de carregar automaticamente o `resultados.json` publicado.
@@ -160,3 +261,4 @@ Antes de publicar o resultado do segundo turno, confirme:
 ## Suporte
 
 Em caso de divergência, mantenha os arquivos existentes, não limpe o navegador e preserve o último `resultados.json` exportado. Esses arquivos permitem recuperar e conferir a apuração.
+
