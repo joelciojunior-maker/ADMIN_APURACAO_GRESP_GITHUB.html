@@ -1,41 +1,93 @@
 {
+  "eleicao": "Eleições do Grêmio Estudantil 2026-2027",
+  "escola": "EE Abílio Raposo Ferraz Júnior",
+  "zona": "903ª",
+  "turnoAtivo": 2,
   "publicado": false,
-  "atualizadoEm": "13/10/2026, 09:40:14",
-  "observacao": "Resultado ainda não publicado pela Comissão Eleitoral.",
-  "urna1": {
-    "aptos": 359,
-    "comparecimento": 296,
-    "brancos": 5,
-    "nulos": 16,
-    "abertura": "09:22",
-    "encerramento": "18:15",
-    "votos": {
-      "10": 4,
-      "17": 7,
-      "55": 30,
-      "67 2°Turno": 70,
-      "77": 47,
-      "95": 5,
-      "97": 36,
-      "99 2°Turno": 76
-    }
+  "primeiroTurno": {
+    "data": "08/10/2026",
+    "eleitoresAptos": 746,
+    "votantes": 587,
+    "ausentes": 159,
+    "brancos": 8,
+    "nulos": 27,
+    "validos": 552,
+    "chapas": [
+      {
+        "numero": 99,
+        "nome": "Abílio Transforma",
+        "votos": 183
+      },
+      {
+        "numero": 67,
+        "nome": "Chapa da Toddy",
+        "votos": 104
+      },
+      {
+        "numero": 77,
+        "nome": "Vozes do Abílio",
+        "votos": 98
+      },
+      {
+        "numero": 97,
+        "nome": "Unidos pelo Futuro",
+        "votos": 66
+      },
+      {
+        "numero": 55,
+        "nome": "Esportes FC",
+        "votos": 52
+      },
+      {
+        "numero": 10,
+        "nome": "Fifa Street",
+        "votos": 28
+      },
+      {
+        "numero": 95,
+        "nome": "Relâmpago Abílio",
+        "votos": 11
+      },
+      {
+        "numero": 17,
+        "nome": "Conscientização da Escola",
+        "votos": 10
+      }
+    ],
+    "inapta": {
+      "numero": 90,
+      "nome": "Jovens Gremistas",
+      "observacao": "INAPTA – DECISÃO DEFINITIVA"
+    },
+    "classificadasSegundoTurno": [
+      99,
+      67
+    ]
   },
-  "urna2": {
-    "aptos": 387,
-    "comparecimento": 291,
-    "brancos": 3,
-    "nulos": 11,
-    "abertura": "09:17",
-    "encerramento": "18:35",
-    "votos": {
-      "10": 24,
-      "17": 3,
-      "55": 22,
-      "67 2°Turno": 34,
-      "77": 51,
-      "95": 6,
-      "97": 30,
-      "99 2°Turno": 107
-    }
+  "segundoTurno": {
+    "data": "",
+    "eleitoresAptos": 746,
+    "urnas": [
+      {
+        "nome": "Urna 1 – 1ª Seção",
+        "eleitoresAptos": 359,
+        "votos": {
+          "99": 0,
+          "67": 0
+        },
+        "brancos": 0,
+        "nulos": 0
+      },
+      {
+        "nome": "Urna 2 – 2ª Seção",
+        "eleitoresAptos": 387,
+        "votos": {
+          "99": 0,
+          "67": 0
+        },
+        "brancos": 0,
+        "nulos": 0
+      }
+    ]
   }
 }
